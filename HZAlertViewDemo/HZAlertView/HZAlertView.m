@@ -9,13 +9,13 @@
 #import "HZAlertView.h"
 #import "UIView+Extension.h"
 #import "HZActionTitleCell.h"
-#import "HZActionIamgeCell.h"
+#import "HZActionImageCell.h"
 #define HZScreenH [UIScreen mainScreen].bounds.size.height
 #define kP(px) (CGFloat)(px * 0.5 * CGRectGetWidth([[UIScreen mainScreen] bounds]) / 375)
 #define SafeAreaTopHeight (HZScreenH == 812.0 ? 88 : 64)
 #define SafeAreaBottomHeight (HZScreenH == 812.0 ? 34 : 0)
 NS_ASSUME_NONNULL_BEGIN
-@interface HZAlertView () <UITableViewDataSource, UITableViewDelegate, HZActionIamgeCellDelegate>
+@interface HZAlertView () <UITableViewDataSource, UITableViewDelegate, HZActionImageCellDelegate>
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, assign) CGFloat actionCellHeight;
 @property (nonatomic, strong) NSArray *actionTitleArr;
@@ -112,7 +112,7 @@ NS_ASSUME_NONNULL_END
             }
             return actionTitleCell;
         } else if (self.actionimageArr){
-            HZActionIamgeCell *actionImageCell = [HZActionIamgeCell cellWithTableView:tableView];
+            HZActionImageCell *actionImageCell = [HZActionImageCell cellWithTableView:tableView];
             actionImageCell.cellHieght = _actionCellHeight;
             actionImageCell.actionImageArr = self.actionimageArr;
             actionImageCell.delegate = self;
@@ -197,11 +197,11 @@ NS_ASSUME_NONNULL_END
         self.hidden = true;
     }];
 }
-#pragma mark ----------------- HZActionIamgeCellDelegate ------------------
-- (void)actionIamgeBtnClick:(NSInteger)actionIamgeBtnIndex {
+#pragma mark ----------------- HZActionImageCellDelegate ------------------
+- (void)actionImageBtnClick:(NSInteger)actionImageBtnIndex {
     [self hiddenSelf];
     if (_actionBlock && _actionimageArr) {
-        self.actionBlock(actionIamgeBtnIndex);
+        self.actionBlock(actionImageBtnIndex);
     }
 }
 @end

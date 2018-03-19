@@ -16,9 +16,9 @@
 		03B449FC205F573F00196CA0 /* HZAlertViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B449FB205F573F00196CA0 /* HZAlertViewDemoTests.m */; };
 		03B44A07205F573F00196CA0 /* HZAlertViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B44A06205F573F00196CA0 /* HZAlertViewDemoUITests.m */; };
 		03B44A2C205F586700196CA0 /* HZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B44A27205F586700196CA0 /* HZAlertView.m */; };
-		03B44A35205F5B4000196CA0 /* HZActionIamgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B44A30205F5B4000196CA0 /* HZActionIamgeCell.m */; };
 		03B44A36205F5B4000196CA0 /* HZActionTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B44A32205F5B4000196CA0 /* HZActionTitleCell.m */; };
 		03B44A37205F5B4000196CA0 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B44A34205F5B4000196CA0 /* UIView+Extension.m */; };
+		03B44A56205F9C8F00196CA0 /* HZActionImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B44A55205F9C8F00196CA0 /* HZActionImageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +57,12 @@
 		03B44A08205F573F00196CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03B44A26205F586700196CA0 /* HZAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZAlertView.h; sourceTree = "<group>"; };
 		03B44A27205F586700196CA0 /* HZAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZAlertView.m; sourceTree = "<group>"; };
-		03B44A2F205F5B4000196CA0 /* HZActionIamgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZActionIamgeCell.h; sourceTree = "<group>"; };
-		03B44A30205F5B4000196CA0 /* HZActionIamgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZActionIamgeCell.m; sourceTree = "<group>"; };
 		03B44A31205F5B4000196CA0 /* HZActionTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZActionTitleCell.h; sourceTree = "<group>"; };
 		03B44A32205F5B4000196CA0 /* HZActionTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZActionTitleCell.m; sourceTree = "<group>"; };
 		03B44A33205F5B4000196CA0 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		03B44A34205F5B4000196CA0 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		03B44A54205F9C8F00196CA0 /* HZActionImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HZActionImageCell.h; sourceTree = "<group>"; };
+		03B44A55205F9C8F00196CA0 /* HZActionImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HZActionImageCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +158,8 @@
 		03B44A2E205F5B4000196CA0 /* BgCode */ = {
 			isa = PBXGroup;
 			children = (
-				03B44A2F205F5B4000196CA0 /* HZActionIamgeCell.h */,
-				03B44A30205F5B4000196CA0 /* HZActionIamgeCell.m */,
+				03B44A54205F9C8F00196CA0 /* HZActionImageCell.h */,
+				03B44A55205F9C8F00196CA0 /* HZActionImageCell.m */,
 				03B44A31205F5B4000196CA0 /* HZActionTitleCell.h */,
 				03B44A32205F5B4000196CA0 /* HZActionTitleCell.m */,
 				03B44A33205F5B4000196CA0 /* UIView+Extension.h */,
@@ -302,11 +302,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B44A36205F5B4000196CA0 /* HZActionTitleCell.m in Sources */,
+				03B44A56205F9C8F00196CA0 /* HZActionImageCell.m in Sources */,
 				03B449E7205F573E00196CA0 /* ViewController.m in Sources */,
 				03B449F2205F573F00196CA0 /* main.m in Sources */,
 				03B44A37205F5B4000196CA0 /* UIView+Extension.m in Sources */,
 				03B449E4205F573E00196CA0 /* AppDelegate.m in Sources */,
-				03B44A35205F5B4000196CA0 /* HZActionIamgeCell.m in Sources */,
 				03B44A2C205F586700196CA0 /* HZAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
