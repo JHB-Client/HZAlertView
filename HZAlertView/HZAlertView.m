@@ -10,10 +10,12 @@
 #import "UIView+Extension.h"
 #import "HZActionTitleCell.h"
 #import "HZActionImageCell.h"
+#define HZKeyWindow [UIApplication sharedApplication].keyWindow
 #define HZScreenH [UIScreen mainScreen].bounds.size.height
 #define kP(px) (CGFloat)(px * 0.5 * CGRectGetWidth([[UIScreen mainScreen] bounds]) / 375)
 #define SafeAreaTopHeight (HZScreenH == 812.0 ? 88 : 64)
 #define SafeAreaBottomHeight (HZScreenH == 812.0 ? 34 : 0)
+
 NS_ASSUME_NONNULL_BEGIN
 @interface HZAlertView () <UITableViewDataSource, UITableViewDelegate, HZActionImageCellDelegate>
 @property (nonatomic, weak) UITableView *tableView;
@@ -24,7 +26,27 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 NS_ASSUME_NONNULL_END
 @implementation HZAlertView
++ (instancetype)showAlertViewWithActionTitleArr:(NSArray *)actionTitleArr {
+    HZAlertView *alertview = [[HZAlertView alloc] initWithActionTitleArr:actionTitleArr];
+    alertview.hidden = false;
+    return alertview;
+}
 
++ (instancetype)showAlertViewWithImageArr:(NSArray *)actionImageArr {
+    HZAlertView *alertview = [[HZAlertView alloc] initWithActionImageArr:actionImageArr];
+    alertview.hidden = false;
+    return alertview;
+}
++ (instancetype)initWithActionTitleArr:(NSArray *)actionTitleArr actionCellHeight:(CGFloat)actionCellHeight {
+    HZAlertView *alertview = [[HZAlertView alloc] initWithActionTitleArr:actionTitleArr actionCellHeight:actionCellHeight];
+    alertview.hidden = false;
+    return alertview;
+}
++ (instancetype)initWithActionTitleArr:(NSArray *)actionTitleArr actionCellHeight:(CGFloat)actionCellHeight cancelActionMarge:(CGFloat)cancelActionMarge {
+    HZAlertView *alertview = [[HZAlertView alloc] initWithActionTitleArr:actionTitleArr actionCellHeight:actionCellHeight cancelActionMarge:cancelActionMarge];
+    alertview.hidden = false;
+    return alertview;
+}
 //
 - (instancetype)initWithActionImageArr:(NSArray *)actionImageArr {
     if (self = [super init]) {
@@ -33,7 +55,7 @@ NS_ASSUME_NONNULL_END
         self.backgroundColor = [UIColor blackColor];
         self.hidden = true;
         self.alpha = 0.0;
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
+        [HZKeyWindow addSubview:self];
         
         //
         _actionimageArr = actionImageArr;
@@ -61,7 +83,7 @@ NS_ASSUME_NONNULL_END
         self.backgroundColor = [UIColor blackColor];
         self.hidden = true;
         self.alpha = 0.0;
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
+        [HZKeyWindow addSubview:self];
         //
         _actionTitleArr = actionTitleArr;
         _actionCellHeight = actionCellHeight;
@@ -87,7 +109,7 @@ NS_ASSUME_NONNULL_END
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //    tableView.scrollsToTop = true;
     tableView.scrollEnabled = false;
-    [[UIApplication sharedApplication].keyWindow addSubview:tableView];
+    [HZKeyWindow addSubview:tableView];
     self.tableView = tableView;
 }
 
@@ -195,6 +217,10 @@ NS_ASSUME_NONNULL_END
         self.tableView.y = HZScreenH;
     } completion:^(BOOL finished) {
         self.hidden = true;
+        //
+        [self removeFromSuperview];
+        [self.tableView removeFromSuperview];
+        self.tableView = nil;
     }];
 }
 #pragma mark ----------------- HZActionImageCellDelegate ------------------

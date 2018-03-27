@@ -10,12 +10,9 @@
 
 @interface HZAlertView : UIView
 //
-- (instancetype)initWithActionImageArr:(NSArray *)actionImageArr;
-//
-- (instancetype)initWithActionTitleArr:(NSArray *)actionTitleArr;
-- (instancetype)initWithActionTitleArr:(NSArray *)actionTitleArr actionCellHeight:(CGFloat)actionCellHeight;
-- (instancetype)initWithActionTitleArr:(NSArray *)actionTitleArr actionCellHeight:(CGFloat)actionCellHeight cancelActionMarge:(CGFloat)cancelActionMarge;
-//
 @property (nonatomic, copy) void(^actionBlock)(NSInteger actionIndex);
-
++ (instancetype)showAlertViewWithActionTitleArr:(NSArray *)actionTitleArr;
++ (instancetype)showAlertViewWithImageArr:(NSArray *)actionImageArr;
++ (instancetype)initWithActionTitleArr:(NSArray *)actionTitleArr actionCellHeight:(CGFloat)actionCellHeight;
++ (instancetype)initWithActionTitleArr:(NSArray *)actionTitleArr actionCellHeight:(CGFloat)actionCellHeight cancelActionMarge:(CGFloat)cancelActionMarge;
 @end
