@@ -18,18 +18,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor blueColor];
-    HZAlertView *alertView = [[HZAlertView alloc] initWithActionTitleArr:@[@"投诉", @"添加到表情", @"投诉"]];
-//    NSArray *imaArr = @[[UIImage imageNamed:@"1.png"]];
-//    HZAlertView *alertView = [[HZAlertView alloc] initWithActionImageArr:imaArr];
-    alertView.actionBlock = ^(NSInteger actionIndex) {
-        NSLog(@"------s---%ld", actionIndex);
-    };
-    self.alertView = alertView;
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.alertView.hidden = false;
+    self.alertView.hidden = false;//
+    //
+    [HZAlertView showAlertViewWithActionTitleArr:@[@"投诉", @"添加到表情", @"投诉"]].actionBlock = ^(NSInteger actionIndex) {
+                    NSLog(@"------s---%ld", actionIndex);
+    };
+
 }
 
 
